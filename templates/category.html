@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <h1>Category</h1>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row max-auto gap-5">
+        {% for p in products %}
+        <div class="card col-3" style="width: 18rem;">
+            <img src="{{p.product_image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> {{p.title}}</h5>
+              <p class="card-text">{{p.description}}</p>
+              <p class="card-text">{{p.selling_price}}</p>
+              <p class="card-text text-decoration-line-through">{{p.discount_price}}</p>
+              <a href="#" class="btn btn-primary">Product Details</a>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+</div>
+{% endblock %}
